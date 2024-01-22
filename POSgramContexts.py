@@ -47,16 +47,16 @@ class POSgramContexts:
               ngram=voti[1:]
               context=voti[0]
            if eelmine and ngram!=eelmine:
-              self.protsendid(kogused)
+              self.percentages(kogused)
               koikkogused[eelmine]=kogused
               kogused={}
            kogused[context]=[hoidla[voti]]
            eelmine=ngram
         koikkogused[eelmine]=kogused
-        self.protsendid(kogused)
+        self.percentages(kogused)
         return koikkogused
 
-    def protsendid(self, kogused):
+    def percentages(self, kogused):
         plokkkokku=sum([v[0] for v in kogused.values()])
         for kontekst in kogused.keys():
            kogused[kontekst].append(kogused[kontekst][0]*100/plokkkokku)       
