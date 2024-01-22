@@ -1,7 +1,7 @@
 import json
 import stanza
 
-class POSgramContexts:
+class PosgramContexts:
     def __init__(self, text, nlength=4):
         self.nlp=stanza.Pipeline(lang="et", processors="tokenize,pos")
         self.nlength=nlength
