@@ -3,7 +3,7 @@ import stanza
 
 class PosgramContexts:
     def __init__(self, text, nlength=4):
-        self.nlp=stanza.Pipeline(lang="et", processors="tokenize,pos")
+        self.nlp=stanza.Pipeline(lang="et", processors="tokenize,pos", download_method=DownloadMethod.REUSE_RESOURCES)
         self.nlength=nlength
         self.dok=self.nlp(text)
         sonaliigijadad=["^"+"".join([sona.xpos for sona in lause.words if sona.xpos])+"$" for lause in self.dok.sentences]
