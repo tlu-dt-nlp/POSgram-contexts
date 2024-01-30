@@ -46,6 +46,7 @@ class PosgramContexts:
            else:
               ngram=voti[1:]
               context=voti[0]
+           if ("$" in ngram) or ("^" in ngram): continue
            if eelmine and ngram!=eelmine:
               self.percentages(kogused)
               koikkogused[eelmine]=kogused
