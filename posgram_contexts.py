@@ -1,5 +1,6 @@
 import json
 import stanza
+from stanza.pipeline.core import DownloadMethod
 
 class PosgramContexts:
     def __init__(self, text, nlength=4):
