@@ -3,9 +3,9 @@ import stanza
 from stanza.pipeline.core import DownloadMethod
 
 class PosgramContexts:
-    def __init__(self, text, nlength=4):
+    def __init__(self, text, nlength=3):
         self.nlp=stanza.Pipeline(lang="et", processors="tokenize,pos", download_method=DownloadMethod.REUSE_RESOURCES)
-        self.nlength=nlength
+        self.nlength=nlength+1
         self.dok=self.nlp(text)
         sonaliigijadad=["^"+"".join([sona.xpos for sona in lause.words if sona.xpos])+"$" for lause in self.dok.sentences]
         self.hoidla={}
